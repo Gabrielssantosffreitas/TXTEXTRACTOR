@@ -8,8 +8,7 @@ import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class EmailService {
-
+public class TellService {
     private String arquivoAnalisarReader(String pathArquivo) {
 
         String texto = "";
@@ -34,13 +33,12 @@ public class EmailService {
     public void criarArquivos(String pathPasta,String texto){
 
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(pathPasta,"email.txt")))){
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(pathPasta,"arquivo.txt")))){
 
             bufferedWriter.write(texto);
             bufferedWriter.newLine();
             bufferedWriter.flush();
-            PrintlnColors.printColor("Arquivo Criado",Colors.BLUE);
-            bufferedWriter.close();
+            PrintlnColors.printColor("Arquivo Criado", Colors.BLUE);
 
         }catch (IOException e) {
             throw new RuntimeException(e);
@@ -71,13 +69,12 @@ public class EmailService {
 
         FinalViews finalViews = new FinalViews();
         String textoAnilisar = arquivoAnalisarReader(pathArquivoAnalise);
-        String emails = regex(textoAnilisar, "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
-        criarArquivos(pathPastaArquivoNovo,emails);
-        return emails;
+        String tell = regex(textoAnilisar, "(\\+55\\s?)?(\\(?\\d{2}\\)?\\s?)?9?\\d{4}-?\\d{4}");
+        criarArquivos(pathPastaArquivoNovo,tell);
+        return tell;
 
 
 
 
     }
-
 }

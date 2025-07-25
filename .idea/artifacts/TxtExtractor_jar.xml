@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TxtExtractor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TxtExtractor_jar</output-path>
+    <root id="archive" name="TxtExtractor.jar">
+      <element id="module-output" name="TxtExtractor" />
+    </root>
+  </artifact>
+</component>

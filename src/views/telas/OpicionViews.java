@@ -1,6 +1,6 @@
 package views.telas;
 
-import controller.EmailController;
+import controller.*;
 import views.PrintlnCorlor.Colors;
 import views.PrintlnCorlor.HeaderColors;
 import views.PrintlnCorlor.PrintlnColors;
@@ -26,12 +26,16 @@ public class OpicionViews {
                InputViews.init(SCANNER, new EmailController());
                 break;
             case 2:
+                InputViews.init(SCANNER, new TellController());
                 break;
             case 3:
+                InputViews.init(SCANNER, new CpfController());
                 break;
             case 4:
+                InputViews.init(SCANNER, new LinkController());
                 break;
             case 5:
+                InputViews.init(SCANNER, new RegexController());
                 break;
             case 6:
                 return false;
