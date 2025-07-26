@@ -1,6 +1,7 @@
 package views.telas;
 
 import controller.*;
+import service.*;
 import views.PrintlnCorlor.Colors;
 import views.PrintlnCorlor.HeaderColors;
 import views.PrintlnCorlor.PrintlnColors;
@@ -23,19 +24,19 @@ public class OpicionViews {
 
         switch (opicion){
             case 1:
-               InputViews.init(SCANNER, new EmailController());
+               InputViews.init(SCANNER, new EmailController(new EmailService()));
                 break;
             case 2:
-                InputViews.init(SCANNER, new TellController());
+                InputViews.init(SCANNER, new TellController(new TellService()));
                 break;
             case 3:
-                InputViews.init(SCANNER, new CpfController());
+                InputViews.init(SCANNER, new CpfController(new CpfService()));
                 break;
             case 4:
-                InputViews.init(SCANNER, new LinkController());
+                InputViews.init(SCANNER, new LinkController(new LinkService()));
                 break;
             case 5:
-                InputViews.init(SCANNER, new RegexController());
+                InputViews.init(SCANNER, new RegexController(new RegexService()));
                 break;
             case 6:
                 return false;
@@ -51,7 +52,7 @@ public class OpicionViews {
         Boolean loop = true;
 
         while (loop){
-            HeaderColors.header("ESCOLHA UMA DAS OPICOES ABAIXO");
+            HeaderColors.headerRed("ESCOLHA UMA DAS OPICOES ABAIXO");
             PrintlnColors.printColor("PROCURAR POR :",Colors.GREEN);
             PrintlnColors.printColor("1- email ",Colors.GREEN);
             PrintlnColors.printColor("2- telefones ",Colors.GREEN);

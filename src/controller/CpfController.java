@@ -1,16 +1,13 @@
 package controller;
 
+import controller.abstracts.ControllerClass;
+import controller.intefaces.Controller;
 import service.CpfService;
-import service.TellService;
+import service.interfaces.Service;
 import views.telas.FinalViews;
 
-public class CpfController implements Controller {
-    private static final CpfService CPF_SERVICE =  new CpfService();
-    private static final FinalViews FINAL_VIEWS = new FinalViews();
-
-    @Override
-    public void controller(String pathArquivoAnalise, String pathPastaArquivoNovo) {
-        String texto =  CPF_SERVICE.anilisar(pathArquivoAnalise,pathPastaArquivoNovo);
-        FINAL_VIEWS.init(texto);
+public class CpfController extends ControllerClass {
+    public CpfController(Service SERVICE) {
+        super(SERVICE);
     }
 }

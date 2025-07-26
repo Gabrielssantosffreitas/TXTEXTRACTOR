@@ -1,15 +1,13 @@
 package controller;
 
+import controller.abstracts.ControllerClass;
+import controller.intefaces.Controller;
 import service.TellService;
+import service.interfaces.Service;
 import views.telas.FinalViews;
 
-public class TellController implements Controller{
-    private static final TellService TELL_SERVICE =  new TellService();
-    private static final FinalViews FINAL_VIEWS = new FinalViews();
-
-    @Override
-    public void controller(String pathArquivoAnalise, String pathPastaArquivoNovo) {
-        String preViewsArquivo =  TELL_SERVICE.anilisar(pathArquivoAnalise,pathPastaArquivoNovo);
-        FINAL_VIEWS.init(preViewsArquivo);
+public class TellController extends ControllerClass {
+    public TellController(Service SERVICE) {
+        super(SERVICE);
     }
 }
