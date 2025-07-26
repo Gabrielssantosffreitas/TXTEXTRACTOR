@@ -3,6 +3,14 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 test/
+aquivo.txt
+Emal.txt
+CPF.txt
+links.txt
+tell.txt
+regex.txt
+ARQUIVO DE MOSTRAÇÂO.txt
+
 ### Eclipse ###
 .apt_generated
 .classpath
